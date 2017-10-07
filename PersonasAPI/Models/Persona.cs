@@ -14,6 +14,8 @@ namespace PersonasAPI.Models
 
         public int Edad { get; set; }
 
+        public int Humor { get; set; }
+
         [Key]
         public int ID { get; set; }
 

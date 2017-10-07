@@ -113,7 +113,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Personas.cs" />
+    <Compile Include="Migrations\201709180126443_InitialCreate.cs" />
+    <Compile Include="Migrations\201709180126443_InitialCreate.Designer.cs">
+      <DependentUpon>201709180126443_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710072323160_HumorAgregado.cs" />
+    <Compile Include="Migrations\201710072323160_HumorAgregado.Designer.cs">
+      <DependentUpon>201710072323160_HumorAgregado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\PersonasAPIContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -127,7 +136,14 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709180126443_InitialCreate.resx">
+      <DependentUpon>201709180126443_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710072323160_HumorAgregado.resx">
+      <DependentUpon>201710072323160_HumorAgregado.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
