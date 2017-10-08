@@ -19,6 +19,7 @@ namespace PersonasAPI.Models
 
         public PersonasAPIContext() : base("name=PersonasAPIContext")
         {
+            Database.SetInitializer<PersonasAPIContext>(new DropCreateDatabaseIfModelChanges<PersonasAPIContext>());
         }
 
         #endregion Constructors

@@ -9,9 +9,11 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using PersonasAPI.Models;
+using System.Web.Http.Cors;
 
 namespace PersonasAPI.Controllers
 {
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class PersonasController : ApiController
     {
         #region Fields
@@ -38,10 +40,20 @@ namespace PersonasAPI.Controllers
             return Ok(personas);
         }
 
-        // GET: api/Personas
-        public IQueryable<Persona> GetPersonas()
+        //GET: api/Personas
+
+        public List<Persona> GetPersonas()
         {
-            return db.Personas;
+            try
+            {
+                return db.Personas.ToList();
+            }
+            catch (Exception e)
+            {
+                return new List<Persona> {
+                    new Persona { Direccion = e.Message}
+                };
+            }
         }
 
         // GET: api/Personas/5

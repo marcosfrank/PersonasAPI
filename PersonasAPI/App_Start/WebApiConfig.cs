@@ -7,10 +7,12 @@ namespace PersonasAPI
 {
     public static class WebApiConfig
     {
+        #region Methods
+
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            config.EnableCors();
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -20,5 +22,7 @@ namespace PersonasAPI
                 defaults: new { id = RouteParameter.Optional }
             );
         }
+
+        #endregion Methods
     }
 }
